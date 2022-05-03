@@ -1,0 +1,12 @@
+from machine import ADC
+from time import sleep
+adc=ADC(27)
+
+while True:
+    val = adc.read_u16()
+
+    val = val * 3.3 / 65535
+    temp = val/0.01
+    print("el valor de la temperatura es {:.2f}".format(temp))
+    sleep(.5)
+    
